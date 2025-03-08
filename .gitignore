@@ -1,0 +1,16 @@
+.idea/
+/.venv
+dist
+pytest_cache
+src/osipi/__pycache__
+tests/__pycache__
+.coverage
+junit
+docs/build
+docs/source/generated
+docs/source/sg_execution_times.rst
+docs/site
+docs/generated
+site
+src/osipi.egg-info
+*/__pycache__
