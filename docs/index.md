@@ -1,10 +1,17 @@
-# Welcome to OSIPI Documentation Hub
+# Welcome to MkDocs
 
-This is the central hub for Open Source Initiative for Perfusion Imaging (OSIPI) repositories. Select a repository below to explore its documentation:
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-- [OSIPI_PYPI](/OSIPI_PYPI/index/) - Tools for simulating and fitting perfusion data.
-- [Sample Repo 1](/sample_repo1/index/) - Sample repository 1 description.
-- [Sample Repo 2](/sample_repo2/index/) - Sample repository 2 description.
-- [Sample Repo 3](/sample_repo3/index/) - Sample repository 3 description.
+## Commands
 
-For more information, visit our [GitHub](https://github.com/OSIPI/pypi).
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.

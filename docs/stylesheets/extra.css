@@ -34,12 +34,26 @@
         border: 0;
         border-top: 1px solid #ccc;
     }
-.md-header__button.md-logo{
-    border-color: rgb(255, 255, 255);
-    border-width: 0.5px;
-    border-style: solid;
-    border-radius: 50%;
-}
+    
+    .md-header__button.md-logo {
+        background-color: white;
+        border: 5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .md-header__button.md-logo:hover {
+        background-color: #f8f9fa;
+        border-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        transform: scale(1.1);
+    }
+    
 
 .md-header,
 .md-tabs{

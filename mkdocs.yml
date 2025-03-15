@@ -1,9 +1,6 @@
 # Project information
 site_name: OSIPI Documentation Hub
 site_url: https://osipi.github.io/pypi/
-site_author: OSIPI Team
-site_description: >-
-  Open Source Initiative for Perfusion Imaging (OSIPI) – Explore our repositories for perfusion imaging tools and documentation.
 
 # Repository
 repo_name: OSIPI/pypi
@@ -14,27 +11,30 @@ copyright: Copyright © 2025 OSIPI Team
 theme:
   name: material
   logo: img/osipi.png
-  favicon: img/favicon.ico
   icon:
     repo: fontawesome/brands/github
     logo: fontawesome/solid/book
   features:
-    - content.code.annotate
-    - content.code.copy
-    - content.code.select
-    - content.tabs
-    - content.tooltips
+    - header.autohide
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
     - navigation.footer
     - navigation.indexes
-    - navigation.instant
-    - navigation.sections
-    - navigation.tabs
+    - toc.integrate
     - navigation.top
-    - navigation.tracking
-    - search.highlight
     - search.suggest
+    - search.highlight
     - search.share
-    - toc.follow
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.code.select
+    - tables
+
+  language: en
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -53,110 +53,86 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  language: en
 
 # Plugins
 plugins:
-  - search
-  - mkdocstrings:
-      handlers:
-        python:
-          paths: ["src"]
-  - gallery:
-      examples_dirs: docs/OSIPI_PYPI/examples
-      gallery_dirs: docs/OSIPI_PYPI/generated/gallery
-  - minify:
-      minify_html: true
+  - multirepo:
+      cleanup: false
+      nav_repos:
+        - name: osipi
+          import_url: 'https://github.com/OSIPI/osipi?branch=main'
+          imports: [docs/*, src/*]
 
-# Extra configuration
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/OSIPI
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/OSIPI
+  # - mkdocstrings:
+  #     handlers: 
+  #       python:
+  #         paths: ["temp_dir/osipi/src"]
 
-# Extra CSS
+  # - gallery:
+  #      examples_dirs: temp_dir/osipi/docs/examples
+  #      gallery_dirs: docs/generated/gallery
+
+nav:
+  - Osipi:
+    - Home: osipi/docs/index.md
+    - User Guide:
+        - Overview: osipi/docs/user-guide/index.md
+        - Installation: osipi/docs/user-guide/install.md
+        - Simulating data:
+            - Overview: osipi/docs/user-guide/simulate.md
+            - Simulate: osipi/docs/user-guide/gen_aif.md
+        - Fitting data:
+            - Overview: osipi/docs/user-guide/fitting.md
+            - Fit: osipi/docs/user-guide/fit_tissue.md
+
+    - About: osipi/docs/about/index.md
+    - Developer Guide: osipi/docs/contribution/index.md
+    - References:
+        - osipi/docs/references/index.md
+        - Index:
+            - osipi/docs/references/models/index.md
+            - AIF models:
+                - osipi/docs/references/models/aif_models/index.md
+                - osipi.aif_parker: osipi/docs/references/models/aif_models/aif_parker.md
+                - osipi.aif_georgiou: osipi/docs/references/models/aif_models/aif_georgiou.md
+                - osipi.aif_weinmann: osipi/docs/references/models/aif_models/aif_weinmann.md
+            - Tissue models :
+                - osipi/docs/references/models/tissue_models/index.md
+                - osipi.tofts: osipi/docs/references/models/tissue_models/tofts.md
+                - osipi.extended_tofts: osipi/docs/references/models/tissue_models/extended_tofts.md
+    - Examples: generated/gallery
+
 extra_css:
   - stylesheets/extra.css
 
 # Markdown Extensions
 markdown_extensions:
-  - abbr
   - admonition
-  - attr_list
-  - def_list
+  - codehilite
   - footnotes
-  - md_in_html
   - meta
   - toc:
       permalink: true
   - tables
-  - pymdownx.arithmatex:
-      generic: true
+  - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
   - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: OSIPI
-      repo: pypi
+  - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
+  - pymdownx.details
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
-# Navigation
-nav:
-  - Home: index.md
-  - OSIPI_PYPI:
-      - Home: OSIPI_PYPI/index.md
-      - User Guide:
-          - Overview: OSIPI_PYPI/user-guide/index.md
-          - Installation: OSIPI_PYPI/user-guide/install.md
-          - Simulating Data:
-              - Overview: OSIPI_PYPI/user-guide/simulate.md
-              - Simulate AIF: OSIPI_PYPI/user-guide/gen_aif.md
-          - Fitting Data:
-              - Overview: OSIPI_PYPI/user-guide/fitting.md
-              - Fit Tissue: OSIPI_PYPI/user-guide/fit_tissue.md
-      - Examples: OSIPI_PYPI/generated/gallery
-      - References:
-          - Overview: OSIPI_PYPI/references/index.md
-          - Model Index: OSIPI_PYPI/references/models/index.md
-          - AIF Models:
-              - Overview: OSIPI_PYPI/references/models/aif_models/index.md
-              - osipi.aif_parker: OSIPI_PYPI/references/models/aif_models/aif_parker.md
-              - osipi.aif_georgiou: OSIPI_PYPI/references/models/aif_models/aif_georgiou.md
-              - osipi.aif_weinmann: OSIPI_PYPI/references/models/aif_models/aif_weinmann.md
-          - Tissue Models:
-              - Overview: OSIPI_PYPI/references/models/tissue_models/index.md
-              - osipi.tofts: OSIPI_PYPI/references/models/tissue_models/tofts.md
-              - osipi.extended_tofts: OSIPI_PYPI/references/models/tissue_models/extended_tofts.md
-      - Developer Guide: 
-              - Overview: OSIPI_PYPI/contribution/index.md
-      - About: 
-              - Overview: OSIPI_PYPI/about/index.md
-  - Sample Repo 1:
-      - Home: sample_repo1/index.md
-  - Sample Repo 2:
-      - Home: sample_repo2/index.md
-  - Sample Repo 3:
-      - Home: sample_repo3/index.md
+  - pymdownx.tabbed:
+        alternate_style: true
+  - attr_list
