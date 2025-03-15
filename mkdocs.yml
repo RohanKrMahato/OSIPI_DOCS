@@ -1,25 +1,24 @@
 # Project information
-site_name: OSIPI Documentation  # Add a proper site name
-site_url: https://osipi.github.io/pypi  # Assuming this is your site URL; adjust if needed
-site_author: OSIPI Team  # Add your team/author name
-site_description: >- 
-  Open Source Initiative for Perfusion Imaging (OSIPI) documentation – simulate and fit perfusion data with ease, built for researchers and developers.
+site_name: OSIPI Documentation Hub
+site_url: https://osipi.github.io/pypi/
+site_author: OSIPI Team
+site_description: >-
+  Open Source Initiative for Perfusion Imaging (OSIPI) – Explore our repositories for perfusion imaging tools and documentation.
 
 # Repository
 repo_name: OSIPI/pypi
 repo_url: https://github.com/OSIPI/pypi
-copyright: Copyright © 2025 OSIPI Team  # Adjust year range as needed
+copyright: Copyright © 2025 OSIPI Team
 
 # Configuration
 theme:
   name: material
-  logo: img/osipi.png  # Your logo
-  favicon: img/favicon.ico  # Add a favicon if you have one
+  logo: img/osipi.png
+  favicon: img/favicon.ico
   icon:
     repo: fontawesome/brands/github
-    logo: fontawesome/solid/book  # Adding a logo icon
+    logo: fontawesome/solid/book
   features:
-    # Enhanced navigation and usability
     - content.code.annotate
     - content.code.copy
     - content.code.select
@@ -37,14 +36,6 @@ theme:
     - search.share
     - toc.follow
   palette:
-    # Multi-mode color scheme with toggle
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: purple
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: teal
@@ -52,35 +43,38 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
   font:
-    text: Roboto  # Consistent typography
+    text: Roboto
     code: Roboto Mono
   language: en
 
 # Plugins
 plugins:
-  - search:  # Explicitly enable search with customization
-      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - search
   - mkdocstrings:
       handlers:
         python:
           paths: ["src"]
   - gallery:
-      examples_dirs: docs/examples
-      gallery_dirs: docs/generated/gallery
-  - minify:  # Optimize site load time
+      examples_dirs: docs/OSIPI_PYPI/examples
+      gallery_dirs: docs/OSIPI_PYPI/generated/gallery
+  - minify:
       minify_html: true
 
 # Extra configuration
 extra:
-  social:  # Add social links
+  social:
     - icon: fontawesome/brands/github
       link: https://github.com/OSIPI
     - icon: fontawesome/brands/x-twitter
-      link: https://x.com/OSIPI  # Replace with actual handle if applicable
-  analytics:  # Optional: add analytics if desired
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY  # Set this in your environment
+      link: https://x.com/OSIPI
 
 # Extra CSS
 extra_css:
@@ -132,27 +126,37 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
-  - User Guide:
-      - Overview: user-guide/index.md
-      - Installation: user-guide/install.md
-      - Simulating Data:
-          - Overview: user-guide/simulate.md
-          - Simulate AIF: user-guide/gen_aif.md
-      - Fitting Data:
-          - Overview: user-guide/fitting.md
-          - Fit Tissue: user-guide/fit_tissue.md
-  - Examples: generated/gallery
-  - References:
-      - Overview: references/index.md
-      - Model Index: references/models/index.md
-      - AIF Models:
-          - Overview: references/models/aif_models/index.md
-          - osipi.aif_parker: references/models/aif_models/aif_parker.md
-          - osipi.aif_georgiou: references/models/aif_models/aif_georgiou.md
-          - osipi.aif_weinmann: references/models/aif_models/aif_weinmann.md
-      - Tissue Models:
-          - Overview: references/models/tissue_models/index.md
-          - osipi.tofts: references/models/tissue_models/tofts.md
-          - osipi.extended_tofts: references/models/tissue_models/extended_tofts.md
-  - Developer Guide: contribution/index.md
-  - About: about/index.md
+  - OSIPI_PYPI:
+      - Home: OSIPI_PYPI/index.md
+      - User Guide:
+          - Overview: OSIPI_PYPI/user-guide/index.md
+          - Installation: OSIPI_PYPI/user-guide/install.md
+          - Simulating Data:
+              - Overview: OSIPI_PYPI/user-guide/simulate.md
+              - Simulate AIF: OSIPI_PYPI/user-guide/gen_aif.md
+          - Fitting Data:
+              - Overview: OSIPI_PYPI/user-guide/fitting.md
+              - Fit Tissue: OSIPI_PYPI/user-guide/fit_tissue.md
+      - Examples: OSIPI_PYPI/generated/gallery
+      - References:
+          - Overview: OSIPI_PYPI/references/index.md
+          - Model Index: OSIPI_PYPI/references/models/index.md
+          - AIF Models:
+              - Overview: OSIPI_PYPI/references/models/aif_models/index.md
+              - osipi.aif_parker: OSIPI_PYPI/references/models/aif_models/aif_parker.md
+              - osipi.aif_georgiou: OSIPI_PYPI/references/models/aif_models/aif_georgiou.md
+              - osipi.aif_weinmann: OSIPI_PYPI/references/models/aif_models/aif_weinmann.md
+          - Tissue Models:
+              - Overview: OSIPI_PYPI/references/models/tissue_models/index.md
+              - osipi.tofts: OSIPI_PYPI/references/models/tissue_models/tofts.md
+              - osipi.extended_tofts: OSIPI_PYPI/references/models/tissue_models/extended_tofts.md
+      - Developer Guide: 
+              - Overview: OSIPI_PYPI/contribution/index.md
+      - About: 
+              - Overview: OSIPI_PYPI/about/index.md
+  - Sample Repo 1:
+      - Home: sample_repo1/index.md
+  - Sample Repo 2:
+      - Home: sample_repo2/index.md
+  - Sample Repo 3:
+      - Home: sample_repo3/index.md

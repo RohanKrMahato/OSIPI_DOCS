@@ -53,3 +53,7 @@
 .md-footer-meta.md-typeset{
     background-color: #32466d;
 }
+
+.md-footer-meta__inner.md-grid{
+    display: none;
+}
